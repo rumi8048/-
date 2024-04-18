@@ -1,0 +1,17 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <h1>Welcome to our Website!</h1>
+    
+    <div>
+        <a href="{% url 'signup' %}"><button>Sign Up</button></a>
+        <a href="{% url 'load_login_form' %}"><button>Login</button></a>
+    </div>
+</body>
+</html>

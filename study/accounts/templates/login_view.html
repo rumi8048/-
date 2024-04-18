@@ -1,0 +1,21 @@
+<!-- templates/login_view.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+<body>
+    <h1>Login</h1>
+    <form action="{% url 'login_view' %}" method="post" >
+        {% csrf_token %}
+        <label for="ID">ID:</label>
+        <input type="text" id="ID" name="ID" required><br><br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        <button type="submit">Login</button> 
+    <form>
+       
+</body>
+</html>
