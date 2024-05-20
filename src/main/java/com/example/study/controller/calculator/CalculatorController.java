@@ -23,7 +23,7 @@ public class CalculatorController {
         int multiply = number1 * number2;
         double division = number1 / (double) number2;
 
-        return "add = "+ add+ "minus = "+minus+ "multiply = "+multiply + "division = "+division ;
+        return "add = "+ add+ "\nminus = "+minus+ "\nmultiply = "+multiply + "\ndivision = "+division ;
     }
 
 }
