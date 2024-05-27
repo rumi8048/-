@@ -1,9 +1,11 @@
 package com.example.study.controller.Item;
 
-import com.example.study.controller.entity.Book;
-import com.example.study.controller.entity.Item;
-import com.example.study.repository.BookRepository;
+import com.example.study.entity.Item;
+
 import com.example.study.repository.ItemRepository;
+
+import com.example.study.service.ItemService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +16,12 @@ import java.util.List;
 public class ItemController {
     @Autowired
     private ItemRepository itemRepository;
+    private ItemService itemService;
+
+    public ItemController(ItemService itemService,ItemRepository itemRepository){
+        this.itemService = itemService;
+        this.itemRepository = itemRepository;
+    }
 
     @GetMapping
     public List<Item> getAllItems() {
@@ -23,7 +31,7 @@ public class ItemController {
 
 
     @PostMapping
-    public Item addItem(@RequestBody Item item) {
-        return itemRepository.save(item);
+    public Long  addItem(@RequestBody @Valid Item items){
+        return itemService.addItem(items);
     }
 }
